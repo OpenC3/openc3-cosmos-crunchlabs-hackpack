@@ -1,0 +1,7 @@
+# Set VARIABLEs here to allow variation in your plugin
+
+VARIABLE turret_target_name TURRET
+
+TARGET TURRET <%= turret_target_name %>
+INTERFACE <%= turret_target_name %>_INT openc3/interfaces/tcpip_client_interface.py host.docker.internal 2950 2950 10.0 None
+  MAP_TARGET <%= turret_target_name %>

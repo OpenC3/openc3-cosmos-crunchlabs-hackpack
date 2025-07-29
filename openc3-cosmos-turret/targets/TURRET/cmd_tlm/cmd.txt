@@ -1,0 +1,36 @@
+COMMAND TURRET UP LITTLE_ENDIAN "Pitch Up"
+  PARAMETER SYNC  0  8 INT 0x11 0x11 0x11 "Sync Pattern"
+  ID_PARAMETER ID 8 8 INT 1 1 1 "Pitch Up Command Identifier"
+  PARAMETER AMOUNT 16 8 INT 0 5 1 "Pitch Up Amount"
+
+COMMAND TURRET DOWN LITTLE_ENDIAN "Pitch Down"
+  PARAMETER SYNC  0  8 INT 0x11 0x11 0x11 "Sync Pattern"
+  ID_PARAMETER ID 8 8 INT 2 2 2 "Pitch Down Command Identifier"
+  PARAMETER AMOUNT 16 8 UINT 0 5 1 "Pitch Down Amount"
+
+COMMAND TURRET LEFT LITTLE_ENDIAN "Turn Left (Counter Clockwise)"
+  PARAMETER SYNC  0  8 INT 0x11 0x11 0x11 "Sync Pattern"
+  ID_PARAMETER ID 8 8 INT 3 3 3 "Turn Left Command Identifier"
+  PARAMETER AMOUNT 16 8 UINT 0 5 1 "Turn Left Amount"
+
+COMMAND TURRET RIGHT LITTLE_ENDIAN "Turn Right (Clockwise)"
+  PARAMETER SYNC  0  8 INT 0x11 0x11 0x11 "Sync Pattern"
+  ID_PARAMETER ID 8 8 INT 4 4 4 "Turn Right Command Identifier"
+  PARAMETER AMOUNT 16 8 UINT 0 5 1 "Turn Right Amount"
+
+COMMAND TURRET FIRE LITTLE_ENDIAN "Fire Missile"
+  HAZARDOUS
+  PARAMETER SYNC  0  8 INT 0x11 0x11 0x11 "Sync Pattern"
+  ID_PARAMETER ID 8 8 INT 5 5 5 "Fire Command Identifier"
+  PARAMETER BLANK 16 8 UINT 0 0 0 "Intentionally Blank"
+
+COMMAND TURRET FIREALL LITTLE_ENDIAN "Fire All Missiles"
+  HAZARDOUS
+  PARAMETER SYNC  0  8 INT 0x11 0x11 0x11 "Sync Pattern"
+  ID_PARAMETER ID 8 8 INT 6 6 6 "Fire All Command Identifier"
+  PARAMETER BLANK 16 8 UINT 0 0 0 "Intentionally Blank"
+
+COMMAND TURRET HOME LITTLE_ENDIAN "Return Servos to Home"
+  PARAMETER SYNC  0  8 INT 0x11 0x11 0x11 "Sync Pattern"
+  ID_PARAMETER ID 8 8 INT 7 7 7 "Home Command Identifier"
+  PARAMETER BLANK 16 8 UINT 0 0 0 "Intentionally Blank"
