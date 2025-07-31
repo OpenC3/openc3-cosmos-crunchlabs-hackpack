@@ -10,7 +10,7 @@ See the [OpenC3](https://openc3.com) documentation for all things OpenC3.
 1. Watch your COSMOS plugin get connected in the UI!
 
 ## Video Guide
-1. [Integrating CrunchLabs Hack Pack Turret with an Aerospace Ground Station | COSMOS Commanding and Automation Demo](TODO)
+1. [Integrating CrunchLabs Hack Pack Turret with an Aerospace Ground Station | COSMOS Commanding and Automation Demo](https://youtu.be/r5UNDdg0OZM)
 
 ## Contributing
 
