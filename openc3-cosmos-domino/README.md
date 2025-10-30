@@ -1,50 +1,15 @@
-# OpenC3 COSMOS Plugin
+# OpenC3 COSMOS Plugin for the CrunchLabs Hack Pack Domino Robot 
 
 See the [OpenC3](https://openc3.com) documentation for all things OpenC3.
 
-Update this comment with your own description.
-
 ## Getting Started
 
-1. Edit the .gemspec file fields: name, summary, description, authors, email, and homepage
-1. Update the LICENSE.txt file with your company name
+1. Install and Deploy COSMOS [Guide Here](https://docs.openc3.com/docs/getting-started/installation)
+1. Install the .gem plugin into COSMOS
+1. Open the bridge: `openc3cli bridgegem openc3-cosmos-bridge-serial router_port=2951 write_port_name=/dev/cu.usbserial-110 read_port_name=/dev/cu.usbserial-110 baud_rate=9600 parity=NONE`
+1. Watch your COSMOS plugin get connected in the UI!
 
-## Building non-tool / widget plugins
-
-1. <Path to COSMOS installation>/openc3.sh cli rake build VERSION=X.Y.Z (or openc3.bat for Windows)
-   - VERSION is required
-   - gem file will be built locally
-
-## Building tool / widget plugins using a local Ruby/Node/pnpm/Rake Environment
-
-1. pnpm install --frozen-lockfile --ignore-scripts
-1. rake build VERSION=1.0.0
-
-## Building tool / widget plugins using Docker and the openc3-node container
-
-If you don’t have a local node environment, you can use our openc3-node container to build custom tools and custom widgets
-
-Mac / Linux:
-
-```
-docker run -it -v `pwd`:/openc3/local:z -w /openc3/local docker.io/openc3inc/openc3-node sh
-```
-
-Windows:
-
-```
-docker run -it -v %cd%:/openc3/local -w /openc3/local docker.io/openc3inc/openc3-node sh
-```
-
-1. pnpm install --frozen-lockfile --ignore-scripts
-1. rake build VERSION=1.0.0
-
-## Installing into OpenC3 COSMOS
-
-1. Go to the OpenC3 Admin Tool, Plugins Tab
-1. Click the install button and choose your plugin.gem file
-1. Fill out plugin parameters
-1. Click Install
+## Video Guide
 
 ## Contributing
 
