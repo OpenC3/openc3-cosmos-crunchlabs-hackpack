@@ -1,0 +1,41 @@
+SCREEN AUTO AUTO 0.5
+
+VERTICAL
+  TITLE "<%= target_name %> Control System Monitor" Arial 20 BOLD
+
+  HORIZONTAL
+    VERTICALBOX "PID Control Loop"
+      LABELVALUE <%= target_name %> STATUS SENSOR_ERR WITH_UNITS 22 CENTER
+        SETTING TEXTCOLOR var(--color-data-visualization-3)
+      LABELVALUE <%= target_name %> STATUS SENSOR_DERIV WITH_UNITS 22 CENTER
+        SETTING TEXTCOLOR var(--color-data-visualization-4)
+      LABELVALUE <%= target_name %> STATUS CTRL_SGNL WITH_UNITS 22 CENTER
+        SETTING TEXTCOLOR var(--color-data-visualization-5)
+    END
+
+    VERTICALBOX "Motor Response"
+      LABELVALUE <%= target_name %> STATUS MOTOR_SPEED_CMBND WITH_UNITS 22 CENTER
+        SETTING TEXTCOLOR var(--color-data-visualization-5)
+      LABELVALUE <%= target_name %> STATUS MOTOR_SPEED_LEFT WITH_UNITS 20 CENTER
+        SETTING TEXTCOLOR var(--color-data-visualization-6)
+      LABELVALUE <%= target_name %> STATUS MOTOR_SPEED_RIGHT WITH_UNITS 20 CENTER
+        SETTING TEXTCOLOR var(--color-data-visualization-7)
+    END
+  END
+
+  VERTICALBOX "Control Loop Visualization"
+    LINEGRAPH <%= target_name %> STATUS SENSOR_ERR
+      SETTING ITEM <%= target_name %> STATUS SENSOR_DERIV
+      SETTING ITEM <%= target_name %> STATUS CTRL_SGNL
+      SETTING HISTORY 30s
+      SETTING SIZE 900 200
+  END
+
+  VERTICALBOX "Motor Response Visualization"
+    LINEGRAPH <%= target_name %> STATUS MOTOR_SPEED_LEFT
+      SETTING ITEM <%= target_name %> STATUS MOTOR_SPEED_RIGHT
+      SETTING ITEM <%= target_name %> STATUS MOTOR_SPEED_CMBND
+      SETTING HISTORY 30s
+      SETTING SIZE 900 200
+  END
+END

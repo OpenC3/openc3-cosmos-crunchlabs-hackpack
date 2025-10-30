@@ -23,7 +23,7 @@
   *
   ************************************************************************************
 */
-#include <SparkFun_TB6612.h>                                //motor driver library
+#include "SparkFun_TB6612.h"                                //motor driver library
 #include <Servo.h>                                          //servo controller library
 #include <OneButton.h>                                      //button handling library
 
@@ -72,6 +72,10 @@ bool stopButtonPressed = false;                             //Boolean for tracki
 unsigned long distanceSinceLastDrop = DISPENSE_DISTANCE;    //Starting with this as DISPENSE_DISTANCE makes the vehicle drop a domino immediately.
 bool dominoDropped = false;
 bool goCommand = false;
+
+//Telemetry packet timing
+unsigned long lastPacketTime = 0;
+const unsigned long PACKET_INTERVAL = 100;  //Send packets every 100ms
 
 void setup()
 {
@@ -167,19 +171,25 @@ void loop() {
     }
   }
 
-  Payload payload = {
-    1, leftSensorValue, rightSensorValue, error, derivative, controlSignal, 
-    combinedmotorspeed, leftMotorSpeed, rightMotorSpeed, distanceSinceLastDrop
-  }
+  // Send telemetry packet every 100ms
+  unsigned long currentTime = millis();
+  if (currentTime - lastPacketTime >= PACKET_INTERVAL) {
+    lastPacketTime = currentTime;
 
-  int payload_length = sizeof(uint32_t) + 1 + sizeof(payload);
-  uint8_t buffer[payload_length];
-  uint32_t sync = SYNC_PATTERN;
-  memcpy(buffer, &sync, sizeof(sync));
-  uint8_t length = sizeof(payload);
-  buffer[sizeof(sync)] = length;
-  memcpy(buffer + sizeof(sync) + 1, &payload, sizeof(payload));
-  Serial.write(buffer, payload_length);
+    Payload payload = {
+      1, leftSensorValue, rightSensorValue, error, derivative, controlSignal,
+      combinedmotorspeed, leftMotorSpeed, rightMotorSpeed, distanceSinceLastDrop
+    };
+
+    int payload_length = sizeof(uint32_t) + 1 + sizeof(payload);
+    uint8_t buffer[payload_length];
+    uint32_t sync = SYNC_PATTERN;
+    memcpy(buffer, &sync, sizeof(sync));
+    uint8_t length = sizeof(payload);
+    buffer[sizeof(sync)] = length;
+    memcpy(buffer + sizeof(sync) + 1, &payload, sizeof(payload));
+    Serial.write(buffer, payload_length);
+  }
 }
 
 void receiveCommands() {

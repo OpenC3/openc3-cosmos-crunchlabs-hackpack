@@ -5,3 +5,4 @@ VARIABLE domino_target_name DOMINO
 TARGET DOMINO <%= domino_target_name %>
 INTERFACE <%= domino_target_name %>_INT tcpip_client_interface.rb host.docker.internal 2951 2951 10.0 None
   MAP_TARGET <%= domino_target_name %>
+  PROTOCOL READ LengthProtocol 32 8 5 1 LITTLE_ENDIAN 5 0x3412CDAB nil false
