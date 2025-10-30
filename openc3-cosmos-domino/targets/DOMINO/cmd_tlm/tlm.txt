@@ -1,0 +1,12 @@
+TELEMETRY DOMINO STATUS LITTLE_ENDIAN "Domino Robot Status"
+  # Keyword      Name  BitSize Type   ID Description
+  APPEND_ID_ITEM ID    8      INT    1  "Identifier"
+  APPEND_ITEM    SENSOR_RIGHT 16     INT     "Left Sensor"
+  APPEND_ITEM    SENSOR_LEFT 16     INT     "Right Sensor"
+  APPEND_ITEM    SENSOR_ERR 16     INT     "Error"
+  APPEND_ITEM    SENSOR_DERIV 32   FLOAT     "Derivative"
+  APPEND_ITEM    CTRL_SGNL 32   FLOAT     "Control Signal"
+  APPEND_ITEM    MOTOR_SPEED_CMBND 16   INT     "Combined Motor Speed"
+  APPEND_ITEM    MOTOR_SPEED_LEFT 16   INT     "Left Motor Speed"
+  APPEND_ITEM    MOTOR_SPEED_RIGHT 16   INT     "Right Motor Speed"
+  APPEND_ITEM    DISTANCE_LST_DRP 32  UINT     "Distance Since Last Drop"

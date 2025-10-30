@@ -1,0 +1,66 @@
+SCREEN AUTO AUTO 0.5
+
+VERTICAL
+  TITLE "<%= target_name %> Robot Status and Control" Arial 22 BOLD
+
+  HORIZONTAL
+    VERTICALBOX "Line Sensors"
+      LABELVALUE <%= target_name %> STATUS SENSOR_LEFT WITH_UNITS 20 CENTER
+        SETTING TEXTCOLOR var(--color-data-visualization-1)
+      LABELVALUE <%= target_name %> STATUS SENSOR_RIGHT WITH_UNITS 20 CENTER
+        SETTING TEXTCOLOR var(--color-data-visualization-2)
+      LABELVALUE <%= target_name %> STATUS SENSOR_ERR WITH_UNITS 20 CENTER
+        SETTING TEXTCOLOR var(--color-data-visualization-3)
+    END
+
+    VERTICALBOX "Control System"
+      LABELVALUE <%= target_name %> STATUS SENSOR_DERIV WITH_UNITS 20 CENTER
+        SETTING TEXTCOLOR var(--color-data-visualization-4)
+      LABELVALUE <%= target_name %> STATUS CTRL_SGNL WITH_UNITS 20 CENTER
+        SETTING TEXTCOLOR var(--color-data-visualization-5)
+    END
+
+    VERTICALBOX "Motor Speeds"
+      LABELVALUE <%= target_name %> STATUS MOTOR_SPEED_LEFT WITH_UNITS 20 CENTER
+        SETTING TEXTCOLOR var(--color-data-visualization-6)
+      LABELVALUE <%= target_name %> STATUS MOTOR_SPEED_RIGHT WITH_UNITS 20 CENTER
+        SETTING TEXTCOLOR var(--color-data-visualization-7)
+      LABELVALUE <%= target_name %> STATUS MOTOR_SPEED_CMBND WITH_UNITS 20 CENTER
+        SETTING TEXTCOLOR var(--color-data-visualization-8)
+    END
+  END
+
+  VERTICALBOX "Distance Tracking"
+    LABELVALUE <%= target_name %> STATUS DISTANCE_LST_DRP WITH_UNITS 25 CENTER
+      SETTING PADDING 10
+    LINEGRAPH <%= target_name %> STATUS DISTANCE_LST_DRP
+      SETTING HISTORY 30s
+      SETTING SIZE 1000 200
+  END
+
+  VERTICALBOX "Real-Time Sensor Graphs"
+    MATRIXBYCOLUMNS 2
+      LABELSPARKLINE <%= target_name %> STATUS SENSOR_LEFT
+        SETTING HISTORY 30s
+      LABELSPARKLINE <%= target_name %> STATUS SENSOR_RIGHT
+        SETTING HISTORY 30s
+      LABELSPARKLINE <%= target_name %> STATUS SENSOR_ERR
+        SETTING HISTORY 30s
+      LABELSPARKLINE <%= target_name %> STATUS SENSOR_DERIV
+        SETTING HISTORY 30s
+    END
+  END
+
+  VERTICALBOX "Real-Time Motor Graphs"
+    MATRIXBYCOLUMNS 2
+      LABELSPARKLINE <%= target_name %> STATUS MOTOR_SPEED_LEFT
+        SETTING HISTORY 30s
+      LABELSPARKLINE <%= target_name %> STATUS MOTOR_SPEED_RIGHT
+        SETTING HISTORY 30s
+      LABELSPARKLINE <%= target_name %> STATUS MOTOR_SPEED_CMBND
+        SETTING HISTORY 30s
+      LABELSPARKLINE <%= target_name %> STATUS CTRL_SGNL
+        SETTING HISTORY 30s
+    END
+  END
+END
