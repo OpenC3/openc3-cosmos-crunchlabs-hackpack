@@ -6,7 +6,7 @@ See the [OpenC3](https://openc3.com) documentation for all things OpenC3.
 
 1. Install and Deploy COSMOS [Guide Here](https://docs.openc3.com/docs/getting-started/installation)
 1. Install the .gem plugin into COSMOS
-1. Open the bridge: `openc3cli bridgegem openc3-cosmos-bridge-serial router_port=2952 write_port_name=YOUR_SERIAL_PORT baud_rate=9600 parity=NONE`
+1. Open the bridge: `openc3cli bridgegem openc3-cosmos-bridge-serial router_port=2952 write_port_name=YOUR_SERIAL_PORT  read_port_name=YOUR_SERIAL_PORT baud_rate=9600 parity=NONE`
 1. Watch your COSMOS plugin get connected in the UI!
 
 ## Video Guide
