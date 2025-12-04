@@ -1,0 +1,7 @@
+# Set VARIABLEs here to allow variation in your plugin
+
+VARIABLE label_maker_target_name LABEL_MAKER
+
+TARGET LABEL_MAKER <%= label_maker_target_name %>
+INTERFACE <%= label_maker_target_name %>_INT tcpip_client_interface.rb host.docker.internal 2952 2952 10.0 nil
+  MAP_TARGET <%= label_maker_target_name %>
