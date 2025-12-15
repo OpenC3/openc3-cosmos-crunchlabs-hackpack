@@ -1,0 +1,8 @@
+LANGUAGE ruby
+
+# Ignored Parameters
+IGNORE_PARAMETER SYNC 
+IGNORE_PARAMETER ID
+
+# Ignored Items
+IGNORE_ITEM PKTID

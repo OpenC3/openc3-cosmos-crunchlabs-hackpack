@@ -1,18 +1,15 @@
-# OpenC3 COSMOS Plugin for the CrunchLabs Subscription Robots
+# OpenC3 COSMOS Plugin for the CrunchLabs Hack Pack Label Maker 
 
 See the [OpenC3](https://openc3.com) documentation for all things OpenC3.
 
 ## Getting Started
 
 1. Install and Deploy COSMOS [Guide Here](https://docs.openc3.com/docs/getting-started/installation)
-1. Check out the README files in the specific project to get started!
-* [Turret](openc3-cosmos-turret/README.md)
-* [Domino](openc3-cosmos-domino/README.md) 
-* [Label Maker](openc3-cosmos-label-maker/README.md) 
+1. Install the .gem plugin into COSMOS
+1. Open the bridge: `openc3cli bridgegem openc3-cosmos-bridge-serial router_port=2952 write_port_name=YOUR_SERIAL_PORT  read_port_name=YOUR_SERIAL_PORT baud_rate=9600 parity=NONE`
+1. Watch your COSMOS plugin get connected in the UI!
 
-## Video Guides
-1. [Integrating CrunchLabs Hack Pack Turret with an Aerospace Ground Station | COSMOS Commanding and Automation Demo](https://youtu.be/r5UNDdg0OZM)
-1. [COSMOS Tutorial – Build a Telemetry Dashboard Using COSMOS & CrunchLabs' Domino Robot | OpenC3.com](https://youtu.be/8F6ti-0kSiI)
+## Video Guide
 1. [COSMOS Tutorial – Make a Weather Station with COSMOS & and a CrunchLabs Label Maker | OpenC3.com](https://youtu.be/BSgC6z6Sess)
 
 ## Contributing

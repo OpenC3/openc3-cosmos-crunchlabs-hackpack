@@ -1,0 +1,7 @@
+COMMAND LABEL_MAKER DRAW BIG_ENDIAN "Draw a label"
+  VALIDATOR label_validator.rb
+
+  # Keyword           Name  BitSize Type   Min Max  Default  Description
+  APPEND_PARAMETER SYNC  8 INT 0x11 0x11 0x11 "Sync Pattern"
+  APPEND_ID_PARAMETER ID  8 INT 1 1 1 "Robot Command Identifier"
+  APPEND_PARAMETER LABEL 256 STRING "OPENC3" "String to Draw"
