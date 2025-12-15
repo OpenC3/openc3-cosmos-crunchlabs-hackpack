@@ -10,6 +10,7 @@ See the [OpenC3](https://openc3.com) documentation for all things OpenC3.
 1. Watch your COSMOS plugin get connected in the UI!
 
 ## Video Guide
+1. [COSMOS Tutorial – Build a Telemetry Dashboard Using COSMOS & CrunchLabs' Domino Robot | OpenC3.com](https://youtu.be/8F6ti-0kSiI)
 
 ## Contributing
 

@@ -10,6 +10,7 @@ See the [OpenC3](https://openc3.com) documentation for all things OpenC3.
 1. Watch your COSMOS plugin get connected in the UI!
 
 ## Video Guide
+1. [COSMOS Tutorial – Make a Weather Station with COSMOS & and a CrunchLabs Label Maker | OpenC3.com](https://youtu.be/BSgC6z6Sess)
 
 ## Contributing
 

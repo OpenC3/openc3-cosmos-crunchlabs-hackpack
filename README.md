@@ -12,6 +12,8 @@ See the [OpenC3](https://openc3.com) documentation for all things OpenC3.
 
 ## Video Guides
 1. [Integrating CrunchLabs Hack Pack Turret with an Aerospace Ground Station | COSMOS Commanding and Automation Demo](https://youtu.be/r5UNDdg0OZM)
+1. [COSMOS Tutorial – Build a Telemetry Dashboard Using COSMOS & CrunchLabs' Domino Robot | OpenC3.com](https://youtu.be/8F6ti-0kSiI)
+1. [COSMOS Tutorial – Make a Weather Station with COSMOS & and a CrunchLabs Label Maker | OpenC3.com](https://youtu.be/BSgC6z6Sess)
 
 ## Contributing
 
