@@ -10,7 +10,7 @@
 
 Gem::Specification.new do |s|
   s.name = 'openc3-cosmos-domino'
-  s.summary = 'CrunchLabs Hack Pack Domino'
+  s.summary = 'OpenC3 COSMOS CrunchLabs Hack Pack Domino Plugin'
   s.description = <<-EOF
     This plugin adds the COSMOS target definition for the CrunchLabs Hack Pack Domino Robot.
   EOF
@@ -30,6 +30,7 @@ Gem::Specification.new do |s|
   s.files = Dir.glob("{targets,lib,tools,microservices,public}/**/*") + %w(Rakefile README.md LICENSE.txt plugin.txt)
   s.metadata = {
     "source_code_uri" => "https://github.com/OpenC3/openc3-cosmos-crunchlabs-hackpack",
+    "openc3_store_title" => "CrunchLabs Hack Pack Domino",
     "openc3_store_keywords" => "crunchlabs, hack pack, domino, robot, target",
     "openc3_store_image" => "public/store_img.png",
     "openc3_store_access_type" => "public",
